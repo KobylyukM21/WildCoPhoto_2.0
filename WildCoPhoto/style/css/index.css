@@ -1,0 +1,126 @@
+body {
+    background-color: #eee6e1;
+    font-family: 'Inria Serif', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #eee6e1;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav-links a::before,
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a::before {
+    left: 50%;
+    transform-origin: left;
+}
+
+.nav-links a::after {
+    right: 50%;
+    transform-origin: right;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+    width: 50%;
+}
+
+.nav-links a:not(:hover)::before,
+.nav-links a:not(:hover)::after {
+    width: 0;
+}
+
+.slideshow {
+    display: flex;
+    overflow: hidden;
+    width: 600px;
+    height: 400px;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.slideshow img:not(:first-child) {
+    opacity: 0;
+}
+
+@keyframes slideAnimation {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 1;
+    }
+    53.33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.slideshow img:nth-child(1) {
+    animation: slideAnimation 15s infinite;
+}
+
+.slideshow img:nth-child(2) {
+    animation: slideAnimation 15s infinite 3.33s;
+}
+
+.slideshow img:nth-child(3) {
+    animation: slideAnimation 15s infinite 6.67s;
+}
+
+.slideshow img:nth-child(4) {
+    animation: slideAnimation 15s infinite 10s;
+}
+
+.slideshow img:nth-child(5) {
+    animation: slideAnimation 15s infinite 13.33s;
+}
